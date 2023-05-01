@@ -2,13 +2,54 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Author extends Model {}
+
 Author.init(
   {
-    constructor(user, bio, profilePicture) {
-      this.user = user;
-      this.bio = bio;
-      this.profilePicture = profilePicture;
-    }
-  });
+    id: {
+      type: DataType.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [8],
+      },
+    },
+  },
+  {
+    hooks: {
+      beforeCreate: async (newAuthorData) => {
+        newAuthorData.password = await bcrypt.hash(newAuthorData.password, 10);
+        return newAuthorData;
+      },
+      beforeUpdate: async (updatedAuthorData) => {
+        updatedAuthorData.password = await bcrypt.hash(updatedAuthorData.password, 10);
+        return updatedAuthorData;
+      },
+    },
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'author',
+  }
+  );
+
+  module.exports = Author;
 
   

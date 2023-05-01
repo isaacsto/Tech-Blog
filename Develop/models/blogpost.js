@@ -5,11 +5,32 @@ const sequelize = require('../config/connection');
   BlogPost.init(
 
    {
-    constructor(title, author, content, dateCreated, dateUpdated) {
-      this.title = title;
-      this.author = author;
-      this.content = content;
-      this.dateCreated = dateCreated;
-      this.dateUpdated = dateUpdated;
+    id: {
+      type: DataTypes.INTEGER, 
+      allowNull: false, 
+      primaryKey: true, 
+      autoIncrement: true,
+    },
+    title: {
+      type: DataTypes.STRING, 
+      allowNull: false, 
+    },
+    body: {
+      type: DataTypes.STRING, 
+      allowNull: false, 
+    },
+    author_id: {
+      type: DataTypes.INTEGER, 
+      references: {
+        model: 'author',
+        key: 'id',
+      },
+    },
+    posted: {
+      type: DataTypes.DATE,
+      allowNull: false, 
+      defaultValue: Date.now(),
     }
   });
+
+  module.exports = BlogPost;
