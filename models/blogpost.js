@@ -29,7 +29,7 @@ const sequelize = require('../config/connection');
     posted: {
       type: DataTypes.DATE,
       allowNull: false, 
-      defaultValue: Date.now(),
+      defaultValue: new Date(),
     }
   },
   {

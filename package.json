@@ -21,5 +21,14 @@
     "session": "^0.1.0"
   },
   "keywords": [],
-  "description": ""
+  "description": "",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacsto/Tech-Blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/isaacsto/Tech-Blog/issues"
+  },
+  "homepage": "https://github.com/isaacsto/Tech-Blog#readme"
 }
