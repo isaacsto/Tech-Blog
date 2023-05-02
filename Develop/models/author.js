@@ -6,7 +6,7 @@ class Author extends Model {}
 Author.init(
   {
     id: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,

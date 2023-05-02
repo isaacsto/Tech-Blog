@@ -40,7 +40,6 @@ router.get('/Post/:id', withAuth, async (req, res) => {
             'title',
             'author',
             'exhibition_date',
-            'filename',
             'description',
           ],
         },
