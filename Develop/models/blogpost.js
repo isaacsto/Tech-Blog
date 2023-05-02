@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Sequelize, Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
   class BlogPost extends Model {}
@@ -31,6 +31,12 @@ const sequelize = require('../config/connection');
       allowNull: false, 
       defaultValue: Date.now(),
     }
-  });
+  },
+  {
+    sequelize,
+    modelName: 'blogpost',
+    timestamps: false,
+  }
+  );
 
   module.exports = BlogPost;
