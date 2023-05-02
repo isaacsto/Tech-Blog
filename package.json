@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "connect": "^3.7.0",
     "connect-session-sequelize": "^7.1.6",
     "dotenv": "^16.0.3",
@@ -22,7 +23,6 @@
   },
   "keywords": [],
   "description": "",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/isaacsto/Tech-Blog.git"

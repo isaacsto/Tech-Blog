@@ -24,13 +24,13 @@ router.post('/', async (req, res) => {
 // Login
 router.post('/login', async (req, res) => {
   try {
-    const dbAuthorData = await Author.findOne({
+    const AuthorData = await Author.findOne({
       where: {
         email: req.body.email,
       },
     });
 
-    if (!dbAuthorData) {
+    if (!AuthorData) {
       res
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
@@ -51,7 +51,7 @@ router.post('/login', async (req, res) => {
 
       res
         .status(200)
-        .json({ author: dbAuthorData, message: 'You are now logged in!' });
+        .json({ author: AuthorData, message: 'You are now logged in!' });
     });
   } catch (err) {
     console.log(err);

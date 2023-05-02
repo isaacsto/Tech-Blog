@@ -1,22 +1,15 @@
 const router = require('express').Router();
-const { Post } = require('../models');
+const { BlogPost } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbPostData = await Post.findAll({
-      include: [
-        {
-          model: postData,
-          attributes: [],
-        },
-      ],
-    });
+    const dbPostData = await BlogPost.findAll();
 
     const posts = dbPostData.map((post) =>
-      posty.get({ plain: true })
+      post.get({ plain: true })
     );
 
     res.render('homepage', {
@@ -34,7 +27,7 @@ router.get('/Post/:id', withAuth, async (req, res) => {
     const dbPostData = await Gallery.findByPk(req.params.id, {
       include: [
         {
-          model: [Post],
+          model: [BlogPost],
           attributes: [
             'id',
             'title',
@@ -57,9 +50,9 @@ router.get('/Post/:id', withAuth, async (req, res) => {
 
 router.get('/post/:id', withAuth, async (req, res) => {
   try {
-    const dbPostData = await Post.findByPk(req.params.id);
+    const PostData = await BlogPost.findByPk(req.params.id);
 
-    const post = dbPostData.get({ plain: true });
+    const post = PostData.get({ plain: true });
 
     res.render('post', { post, loggedIn: req.session.loggedIn });
   } catch (err) {
