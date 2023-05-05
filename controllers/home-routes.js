@@ -3,7 +3,7 @@ const { BlogPost } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
-// GET all galleries for homepage
+
 router.get('/', async (req, res) => {
   try {
     const dbPostData = await BlogPost.findAll();
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 
 router.get('/Post/:id', withAuth, async (req, res) => {
   try {
-    const dbPostData = await Gallery.findByPk(req.params.id, {
+    const dbPostData = await BlogPost.findByPk(req.params.id, {
       include: [
         {
           model: [BlogPost],
