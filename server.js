@@ -34,6 +34,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
+app.get('/create-post', (req, res) => {
+  // Render your create-post template
+  res.render('create-post');
+});
+
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
