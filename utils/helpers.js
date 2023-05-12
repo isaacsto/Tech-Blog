@@ -1,10 +1,15 @@
-module.exports = {
-    format_time: (date) => {
-      return date.toLocaleTimeString();
-    },
-    format_date: (date) => {
-      return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${
-        new Date(date).getFullYear() + 5
-      }`;
-    },
-  }
+
+const Handlebars = require('handlebars');
+
+// Helper to format date
+Handlebars.registerHelper('format_date', (date) => {
+  const formattedDate = new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+  return formattedDate;
+});
+
+
+module.exports = Handlebars;

@@ -14,6 +14,10 @@ const sequelize = require('../config/connection');
     title: {
       type: DataTypes.STRING, 
       allowNull: false, 
+      validate: {
+        notEmpty: true,
+        len: [1, 255],
+      }
     },
     body: {
       type: DataTypes.STRING, 

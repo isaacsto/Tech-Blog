@@ -36,6 +36,12 @@ router.get('/post/:id', withAuth, async (req, res) => {
 // create a new blog post
 router.post('/', withAuth, async (req, res) => {
   try {
+    const { title, content } = req.body;
+
+    if (!title || !content) {
+      res.status(400).render('error', { message: 'Title and Content are required to post :(' })
+    }
+    
     const newPost = await BlogPost.create({
       title: req.body.title,
       content: req.body.content,

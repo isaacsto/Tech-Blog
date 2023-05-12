@@ -32,6 +32,20 @@
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
+{{#each posts}}
+  <section class="post">
+    <img src="/images/{{filename}}" alt="{{description}}">
+    <div class="post-details">
+      <h3>{{title}}</h3>
+      <p>By: {{author}}</p>
+      <p>Created: {{format_date created_date}}</p>
+    </div>
+  </section>
+{{/each}}
+
+<a href="/create-post" class="btn btn-primary">Create Post</a>
+
 </body>
 
 </html>
