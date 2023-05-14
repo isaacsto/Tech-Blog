@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-app.get('/create-post', withAuth, (req, res) => {
+app.get('/create-post', (req, res) => {
   // Render your create-post template
   res.render('create-post');
 });
