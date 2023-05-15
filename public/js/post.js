@@ -5,12 +5,12 @@ const Post = async (event) => {
   
     // Get form data
     const title = document.querySelector('#post-title').value.trim();
-    const content = document.querySelector('#post-content').value.trim();
+    const body = document.querySelector('#post-content').value.trim();
   
     // Send POST request to server to create a new post
-    const response = await fetch('http://localhost:3000/api/blogpost-routes', {
+    const response = await fetch('/api/blogpost', {
       method: 'POST',
-      body: JSON.stringify({ title, content }),
+      body: JSON.stringify({ title, body }),
       headers: { 'Content-Type': 'application/json' },
     });
   

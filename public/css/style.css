@@ -1,10 +1,10 @@
 :root {
-    --primary: #3d5852;
+    --primary: #93A7AA;
     --secondary: #86938f;
-    --tertiary: #5e877f;
-    --quatrinary: #6c6b67;
-    --light: #e3e4e3;
-    --dark: #182c23;
+    --tertiary: ##AFBEA2;
+    --quatrinary: #AFBEA2;
+    --light: #DED2C1;
+    --dark: #2E5E4E;
     --error: rgb(228, 46, 1);
     --border-radius: 0.3rem;
   }
@@ -66,7 +66,7 @@
     background-color: var(--dark);
   }
   
-  .gallery {
+/*   .login-card {
     flex: 4;
     background-color: #fff;
     padding: 50px;
@@ -74,7 +74,7 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-  }
+  } */
   
   .btn-no-style {
     background: none;
@@ -92,19 +92,6 @@
     height: auto;
   }
   
-  .painting {
-    width: 50%;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 25px;
-  }
-  
-  .painting-details {
-    text-align: center;
-    padding: 10px 20px;
-    font-weight: bold;
-  }
-  
   /* CARDS */
   .card {
     margin: 20px;
@@ -116,17 +103,22 @@
   }
   
   .login-card {
+  
+    padding: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
     margin: 0 0 20px 0;
-    flex: 0 0 50%;
+    flex: 4;
     max-width: 50%;
-    padding: 5px;
     border: 3px solid var(--dark);
     border-radius: var(--border-radius);
     border-style: double;
     border-width: thick;
-    background-color: #577a7c;
+    background-color: #93A7AA;
     color: var(--light);
-  }
+  } 
   
   .card header {
     color: var(--light);
