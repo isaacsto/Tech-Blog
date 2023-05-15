@@ -1,5 +1,6 @@
 // Function to create new post
-const newPost = async (event) => {
+
+const Post = async (event) => {
     event.preventDefault();
   
     // Get form data
@@ -7,7 +8,7 @@ const newPost = async (event) => {
     const content = document.querySelector('#post-content').value.trim();
   
     // Send POST request to server to create a new post
-    const response = await fetch('/api/post-controller', {
+    const response = await fetch('/api/post-controller.js', {
       method: 'POST',
       body: JSON.stringify({ title, content }),
       headers: { 'Content-Type': 'application/json' },
@@ -21,7 +22,6 @@ const newPost = async (event) => {
       alert('Failed to create a new post');
     }
   };
+
   
-  
-  document.querySelector('#create-post-form').addEventListener('submit', newPost);
-  
+  document.querySelector('.create-post-form').addEventListener('submit', Post);

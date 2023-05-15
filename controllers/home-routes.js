@@ -70,4 +70,24 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/create-post', withAuth, (req, res) => {
+  res.render('create-post', { loggedIn: req.session.loggedIn });
+});
+
+// Route for creating new post
+router.post('/create-post', withAuth, async (req, res) => {
+  try {
+    const newPost = await BlogPost.create({
+      title: req.body.title,
+      content: req.body.content,
+      author_id: req.session.author_id,
+    });
+    res.status(200).json(newPost);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
 module.exports = router;
