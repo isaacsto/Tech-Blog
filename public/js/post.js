@@ -5,7 +5,7 @@ const Post = async (event) => {
   
     // Get form data
     const title = document.querySelector('#post-title').value.trim();
-    const body = document.querySelector('#post-content').value.trim();
+    const body = document.querySelector('#post-body').value.trim();
   
     // Send POST request to server to create a new post
     const response = await fetch('/api/blogpost', {

@@ -2,14 +2,7 @@
 
 {{!-- Display blog posts --}}
 {{#each posts}}
-  <section class="post">
-    <img src="/images/{{filename}}" alt="{{description}}">
-    <div class="post-details">
-      <h3>{{title}}</h3>
-      <p>By: {{author}}</p>
-      <p>Created: {{format_date created_date}}</p>
-    </div>
-  </section>
+  {{> post-block}}
 {{/each}}
 
 {{!-- Form to create new post --}}
@@ -21,8 +14,8 @@
       <input type="text" id="post-title" name="title" required>
     </div>
     <div class="form-group">
-      <label for="post-content">Content</label>
-      <textarea id="post-content" name="content" required></textarea>
+      <label for="post-body">Content</label>
+      <textarea id="post-body" name="body" required></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Create Post</button>
   </form>

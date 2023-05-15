@@ -3,6 +3,8 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const Handlebars = require('handlebars');
+
 
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
@@ -20,6 +22,16 @@ const sess = {
     db: sequelize,
   }),
 };
+
+const postBlockPartial = `
+  <div class="post-block">
+    <h2>{{title}}</h2>
+    <p>{{content}}</p>
+    <p>Author: {{author}}</p>
+  </div>
+`;
+
+Handlebars.registerPartial('post-block', postBlockPartial);
 
 app.use(session(sess));
 
