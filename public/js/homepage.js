@@ -36,12 +36,7 @@ const mainPage = async (event) => {
       }
     }
   };
+
+const deleteButton = document.querySelector('.delete-button');
+deleteButton.addEventListener('onclick', delButtonHandler);
   
-  /* document
-    .querySelector('.create-post-form')
-    .addEventListener('submit', Post ); */
-  
-/*   document
-    .querySelector('post-list')
-    .addEventListener('click', delButtonHandler);
-   */

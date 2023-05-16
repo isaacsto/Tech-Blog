@@ -6,6 +6,10 @@
       <input type="text" id="post-title" name="title" required>
     </div>
     <div class="form-group">
+      <label for="author-name">Your Name</label>
+      <input type="text" id="author-name" name="name" required>
+    </div>
+    <div class="form-group">
       <label for="post-body">Content</label>
       <textarea id="post-body" name="body" required></textarea>
     </div>
@@ -16,6 +20,7 @@
 <script id="post-template" type="text/x-handlebars-template">
   <div class="post">
     <h3>{{title}}</h3>
+    <p>{{author}}</p>
     <p>{{body}}</p>
   </div>
 </script>
