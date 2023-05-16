@@ -1,1 +1,23 @@
-<div>Anything</div>
+<section class="create-post-form">
+  <h2>Create a New Post</h2>
+  <form id="create-post-form">
+    <div class="form-group">
+      <label for="post-title">Title</label>
+      <input type="text" id="post-title" name="title" required>
+    </div>
+    <div class="form-group">
+      <label for="post-body">Content</label>
+      <textarea id="post-body" name="body" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Post</button>
+  </form>
+</section>
+
+<script id="post-template" type="text/x-handlebars-template">
+  <div class="post">
+    <h3>{{title}}</h3>
+    <p>{{body}}</p>
+  </div>
+</script>
+
+<script src="/js/create-post.js"></script>
