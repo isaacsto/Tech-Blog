@@ -5,7 +5,7 @@ const mainPage = async (event) => {
     const body = document.querySelector('#post-body').value.trim();
   
     if (title && body) {
-      const response = await fetch(`/api/projects`, {
+      const response = await fetch(`/api/blogpost`, {
         method: 'POST',
         body: JSON.stringify({ title, body }),
         headers: {
@@ -14,7 +14,7 @@ const mainPage = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/mainPage');
+        document.location.replace('/blogpost');
       } else {
         alert('Failed to create post');
       }
@@ -22,26 +22,26 @@ const mainPage = async (event) => {
   };
   
   const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('post-id')) {
-      const id = event.target.getAttribute('post-id');
+    if (event.target.hasAttribute('blogpost')) {
+      const id = event.target.getAttribute('blogpost');
   
-      const response = await fetch(`/api/blogpost-routes/${id}`, {
+      const response = await fetch(`/api/blogpost/${id}`, {
         method: 'DELETE',
       });
   
       if (response.ok) {
-        document.location.replace('/mainPage');
+        document.location.replace('/blogpost');
       } else {
         alert('Failed to delete post');
       }
     }
   };
   
-  document
-    .querySelector('.new-post-form')
-    .addEventListener('submit', newFormHandler);
+  /* document
+    .querySelector('.create-post-form')
+    .addEventListener('submit', Post ); */
   
-  document
+/*   document
     .querySelector('post-list')
     .addEventListener('click', delButtonHandler);
-  
+   */
