@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   try {
     const dbPostData = await BlogPost.findAll();
     const posts = dbPostData.map((post) => post.get({ plain: true }));
-    res.render('homepage', {
+    res.render('main', {
       posts,
       loggedIn: req.session.loggedIn,
     });
