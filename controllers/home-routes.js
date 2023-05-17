@@ -9,10 +9,10 @@ router.get('/', async (req, res) => {
     const dbPostData = await BlogPost.findAll({ include : 'author'});
 
    const posts = dbPostData.map((post) => {
-   const { id, title, body, posted, author } =  */post.get({ plain: true })
-       return {
+   /* const { id, title, body, posted, author } =   */post.get({ plain: true })
+      /*  return {
         id, title, body, posted, author: author.name 
-      } 
+      }  */
      });
 
     res.render('main', {

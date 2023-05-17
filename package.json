@@ -1,7 +1,7 @@
 {
   "name": "tech-blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "## this is a web application that enables users to create accounts, share posts, and engage with other users. Users can easily register and publish their thoughts on technology related subjects. The platform offers access to past posts on the homepage.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/isaacsto/Tech-Blog#readme",
   "dependencies": {
+    "bcrpyt": "^2.0.0",
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.6",
     "dotenv": "^16.0.3",
