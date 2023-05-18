@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
       }  */
      });
 
-    res.render('main', {
+    res.render('dashboard', {
       posts,
       loggedIn: req.session.loggedIn,
     });

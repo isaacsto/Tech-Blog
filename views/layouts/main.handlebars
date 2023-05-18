@@ -33,19 +33,12 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 
-{{#each posts}}
-  <section class="post">
-    <div class="post-details">
-      <h3>{{title}}</h3>
-      <p>By: {{author}}</p>
-      <p>Created: {{format_date created_date}}</p>
-      <button class="delete-button" blogpost='${id}'>Delete Post</button>
-    </div>
-  </section>
-{{/each}}
 
-<a href="/create-post" class="btn btn-primary">Create Post</a>\
+
+<a href="/create-post" class="btn btn-primary">Create Post</a>
+
+
 
 </body>
 
-<script src="/js/homepage.js"></script>
+

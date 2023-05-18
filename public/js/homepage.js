@@ -38,5 +38,5 @@ const mainPage = async (event) => {
   };
 
 const deleteButton = document.querySelector('.delete-button');
-deleteButton.addEventListener('onclick', delButtonHandler);
+deleteButton.addEventListener('click', delButtonHandler);
   

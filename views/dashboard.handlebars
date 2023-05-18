@@ -1,0 +1,12 @@
+{{#each posts}}
+  <section class="post">
+    <div class="post-details">
+      <h3>{{title}}</h3>
+      <p>By: {{author}}</p>
+      <p>Created: {{format_date created_date}}</p>
+      <button class="delete-button" blogpost={{id}}>Delete Post</button>
+    </div>
+  </section>
+{{/each}}
+
+<script src="/js/homepage.js"></script>
