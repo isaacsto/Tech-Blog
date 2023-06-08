@@ -13,7 +13,7 @@ const sequelize = require('../config/connection');
     },
     title: {
       type: DataTypes.STRING, 
-      allowNull: false, 
+      allowNull: true, 
       validate: {
         notEmpty: true,
         len: [1, 255],
@@ -21,7 +21,7 @@ const sequelize = require('../config/connection');
     },
     body: {
       type: DataTypes.STRING, 
-      allowNull: false, 
+      allowNull: true, 
     },
     author_id: {
       type: DataTypes.INTEGER, 
