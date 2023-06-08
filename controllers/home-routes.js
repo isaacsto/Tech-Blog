@@ -73,12 +73,12 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/create-post', withAuth, (req, res) => {
+router.get('/create/post', withAuth, (req, res) => {
   res.render('create-post', { loggedIn: req.session.loggedIn });
 });
 
 // Route for creating new post
-router.post('/create-post', withAuth, async (req, res) => {
+router.post('/create/post', withAuth, async (req, res) => {
   try {
     const newPost = await BlogPost.create({
       title: req.body.title,

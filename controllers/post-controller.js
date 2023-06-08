@@ -1,4 +1,4 @@
-/* const { BlogPost } = require('../models');
+const { BlogPost } = require('../models');
 
 const postController = {
   createPost: async (req, res) => {
@@ -104,5 +104,5 @@ const postController = {
   },
 };
 
-module.exports = postController; */
+module.exports = postController; 
 
