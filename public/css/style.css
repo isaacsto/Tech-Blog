@@ -89,13 +89,12 @@ h2 {
 }
 
 .card {
-  display: flex;
-  justify-content: center space-around 10px;
-  align-items: center;
-  padding: 10px; 
-  border: solid;
-  border-color: white;
+  padding: 20px; 
+  border: solid 2px;
+  border-color: rgb(195, 47, 59); ;
   margin: 10%;
+  background-color: white;
+  
 }
 
 .brand-img {
@@ -104,4 +103,9 @@ h2 {
 
 .card-wrap {
   justify-content: center space-around 20px;
+  padding: 20px; 
+  /* border: solid 5px; */
+ /*  border-color: rgb(195, 47, 59); ;
+  margin: 10%;
+  background-color: white; */
 }

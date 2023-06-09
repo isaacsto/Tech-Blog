@@ -2,6 +2,7 @@
 
 <script src="/js/homepage.js"></script>
 
+<form class="posts">
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="./assets/logo.png" alt="Card image cap">
    <div class="card-wrap">
@@ -12,13 +13,16 @@
       <h3>{{title}}</h3>
       <p>By: {{author}}</p>
       <p>Created: {{format_date created_date}}</p>
-      <button type="button" class="btn btn-danger" blogpost={{id}}>Delete Post</button>
+      <button type="button" id="delete-btn" class="btn btn-danger" blogpost={{id}}>Delete Post</button>
     </div>
     </div>
   </section>
-
+</form>
 
   </div>
+
+  <script src="/js/homepage.js"></script>
+
 </div>
 
 
