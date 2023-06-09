@@ -1,13 +1,13 @@
-const mainPage = async (event) => {
+const homePage = async (event) => {
     event.preventDefault();
   
     const title = document.querySelector('#post-title').value.trim();
     const body = document.querySelector('#post-body').value.trim();
-  
+  /* 
     if (title && body) {
       const posts = dbPostData.map((post) => {
-        return post.get({ plain: true })
-});
+        return post.get({ plain: true }) */
+/* }); */
       const response = await fetch(`/api/blogpost`, {
         method: 'POST',
         body: JSON.stringify({ title, body }),
@@ -23,7 +23,7 @@ const mainPage = async (event) => {
         alert('Failed to create post');
       }
     }
-  };
+/*   }; */
   
   const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('blogpost')) {
