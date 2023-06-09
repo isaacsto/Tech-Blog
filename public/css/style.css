@@ -1,4 +1,7 @@
 /* main handlebars styling  */
+* {
+  color: rgb(195, 47, 59);
+}
 
 .heading {
   text-align: center;
@@ -78,4 +81,27 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.card-img-top {
+  max-width: 30px;
+  border-radius: 10px;
+}
+
+.card {
+  display: flex;
+  justify-content: center space-around 10px;
+  align-items: center;
+  padding: 10px; 
+  border: solid;
+  border-color: white;
+  margin: 10%;
+}
+
+.brand-img {
+  border-radius: 10px;
+}
+
+.card-wrap {
+  justify-content: center space-around 20px;
 }
