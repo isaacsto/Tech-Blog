@@ -1,4 +1,6 @@
-const { BlogPost } = require('../models');
+/* const { BlogPost } = require('../../models');
+const router = require('express').Router();
+
 
 const postController = {
   createPost: async (req, res) => {
@@ -106,3 +108,4 @@ const postController = {
 
 module.exports = postController; 
 
+module.exports = router */
