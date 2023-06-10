@@ -8,7 +8,7 @@ const Post = async (event) => {
     const body = document.querySelector('#post-body').value.trim();
   
     // Send POST request to server to create a new post
-    const response = await fetch('./api/blogpost/create/post', {
+    const response = await fetch('/api/blogpost/create/post', {
       method: 'POST',
       body: JSON.stringify({ title, body }),
       headers: { 'Content-Type': 'application/json' },

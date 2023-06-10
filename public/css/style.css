@@ -1,6 +1,6 @@
 /* main handlebars styling  */
 * {
-  color: rgb(195, 47, 59);
+  color: rgb(16, 16, 220),
 }
 
 .heading {
@@ -90,8 +90,8 @@ h2 {
 
 .card {
   padding: 20px; 
-  border: solid 2px;
-  border-color: rgb(195, 47, 59); ;
+  border: double 4px;
+  border-color:  rgb(16, 16, 220);
   margin: 10%;
   background-color: white;
   
