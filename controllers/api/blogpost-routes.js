@@ -36,7 +36,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
 });
 
 // create a new blog post
-router.post('/create/post', withAuth, async (req, res) => {
+router.post('/create/post',  withAuth, async (req, res) => {
   try {
     const { title, body } = req.body;
 
@@ -56,21 +56,6 @@ router.post('/create/post', withAuth, async (req, res) => {
   }
 });
 
-// Route for creating new post
-router.post('/create/post', withAuth, async (req, res) => {
-  try {
-    const newPost = await BlogPost.create({
-      title: req.body.title,
-      content: req.body.content,
-      author_id: req.session.author_id,
-    });
-    res.status(200).json(newPost);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
- 
 
 // update a blog post
 router.put('/:id', withAuth, async (req, res) => {
