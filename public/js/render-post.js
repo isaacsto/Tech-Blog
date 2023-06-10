@@ -1,4 +1,4 @@
-// Function to create new post
+/* // Function to create new post
 
 const Post = async (event) => {
     event.preventDefault();
@@ -25,3 +25,4 @@ const Post = async (event) => {
 
   
   document.querySelector('.create-post-form').addEventListener('submit', Post);
+ */
