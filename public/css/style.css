@@ -1,6 +1,7 @@
 /* main handlebars styling  */
 * {
-  color: rgb(16, 16, 220),
+  color: rgb(16, 16, 220);
+   
 }
 
 .heading {
@@ -28,10 +29,10 @@
 }
 
 .form-group {
-  padding: 15px;
-
- 
+  padding: 15px; 
 }
+
+
 
 .login-wrap {
   padding-left: 20px;
