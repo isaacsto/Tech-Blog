@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { BlogPost } = require('../../models');
-const withAuth = require('../../utils/auth');
+/* const withAuth = require('../../utils/auth'); */
 
 
 
@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
 });
 
 // get a single blog post
-router.get('/post/:id', withAuth, async (req, res) => {
+router.get('/post/:id', /* withAuth, */ async (req, res) => {
   try {
     const postData = await BlogPost.findByPk(req.params.id);
     if (!postData) {
@@ -36,7 +36,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
 });
 
 // create a new blog post
-router.post('/create/post',  withAuth, async (req, res) => {
+router.post('/create/post',  /* withAuth,  */async (req, res) => {
   try {
     const { title, body } = req.body;
 
@@ -58,7 +58,7 @@ router.post('/create/post',  withAuth, async (req, res) => {
 
 
 // update a blog post
-router.put('/:id', withAuth, async (req, res) => {
+router.put('/:id', /* withAuth, */ async (req, res) => {
   try {
     const updatedPost = await BlogPost.update(req.body, {
       where: {
@@ -78,7 +78,7 @@ router.put('/:id', withAuth, async (req, res) => {
 });
 
 // delete a blog post
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', /* withAuth */ async (req, res) => {
   try {
     const deletedPost = await BlogPost.destroy({
       where: {
