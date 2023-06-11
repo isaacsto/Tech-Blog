@@ -23,5 +23,26 @@ const Post = async (event) => {
     }
   };
 
+  const deletePost = async (event) => {
+    event.preventDefault();
+    
+     
+     const response = await fetch('/api/blogpost/id', {
+
+      method: 'DELETE',
+    
+    });
+  
+    if (response.ok) {
+     
+      document.location.replace('/blogpost');
+    } else {
+      
+      alert('Failed to delete');
+    }
+  };
+
   
   document.querySelector('.create-post-form').addEventListener('submit', Post);
+
+  document.querySelector('.post').addEventListener('click', Post);
