@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
   try {
     const dbPostData = await BlogPost.findAll();
     const posts = dbPostData.map((post) => post.get({ plain: true }));
-    res.render('dashboard', {
+    res.render('/', {
       posts: posts.map(post => ({
         ...post ,
         content: post.content,
