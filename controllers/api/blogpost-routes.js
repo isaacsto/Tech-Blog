@@ -58,9 +58,9 @@ router.post('/create/post',  /* withAuth,  */async (req, res) => {
 
 
 // update a blog post
-router.put('/:id', /* withAuth, */ async (req, res) => {
+router.put('/:id', /* withAuth, */ async (req, res)  => {
   try {
-    const updatedPost = await BlogPost.update(req.body, {
+    const updatedPost =  BlogPost.update(req.body, {
       where: {
         id: req.params.id,
         author_id: req.session.author_id,
@@ -78,7 +78,7 @@ router.put('/:id', /* withAuth, */ async (req, res) => {
 });
 
 // delete a blog post
-router.delete('/blogpost/id', /* withAuth */ async (req, res) => {
+router.delete('/:id', /* withAuth */ async (req, res) => {
   try {
     const deletedPost = await BlogPost.destroy({
       where: {

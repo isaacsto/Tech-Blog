@@ -27,7 +27,7 @@ const Post = async (event) => {
     event.preventDefault();
     
      
-     const response = await fetch('/api/blogpost/id', {
+     const response = await fetch('/api/blogpost/:id', {
 
       method: 'DELETE',
     
