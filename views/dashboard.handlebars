@@ -7,15 +7,16 @@
    <div class="card-wrap">
   <div class="card-body">
 
-   <section class="post">
-    <div class="post-details">
-      <h3>{{title}}</h3>
+   
+  <div id="post-container">
+    {{!--   <h3 class="post-title">{{title}}</h3>
+      <p class="post-body"> {{body}}</p>
       <p>By: {{author}}</p>
-      <p>Created: {{format_date created_date}}</p>
+      <p>Created: {{format_date created_date}}</p> --}}
       <button type="button" id="delete-btn" class="btn btn-primary" blogpost={{id}}>Delete Post</button>
     </div>
-    </div>
-  </section>
+    </div> 
+  
 </form>
 
   </div>
@@ -27,5 +28,4 @@
 
 {{/each}}
 
-
- <script src="/js/homepage.js"></script>
+<script src="js/homepage.js"></script>

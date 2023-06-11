@@ -10,7 +10,10 @@ router.get('/', async (req, res) => {
     const dbPostData = await BlogPost.findAll();
     const posts = dbPostData.map((post) => post.get({ plain: true }));
     res.render('dashboard', {
-      posts,
+      posts: posts.map(post => ({
+        ...post ,
+        content: post.content,
+      })),
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
