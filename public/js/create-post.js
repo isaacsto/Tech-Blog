@@ -16,7 +16,7 @@ const savePost = async (event) => {
   
     if (response.ok) {
       console.log('Post saved successfully!');
-      window.location.href = '/dashboard.handlebars';
+      /* window.location.href = './'; */
     } else {
       alert('Failed to create a new post');
     }

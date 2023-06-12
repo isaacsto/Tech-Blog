@@ -1,35 +1,30 @@
 
 // Function to create new post
 
-const renderPost = async (event) => {
-  event.preventDefault();
+const fetchAndRenderPost = async () => {
+  try {
+  
+    const response = await fetch('/create/post'); 
 
-  // Get form data
-  const title = document.querySelector('#post-title').value.trim();
-  const body = document.querySelector('#post-body').value.trim();
+    if (response.ok) {
+      const post = await response.json();
+      const postContainer = document.querySelector("#post-container");
+      postContainer.innerHTML = ''; 
 
-  // Send POST request to server to create a new post
-  const response = await fetch('/api/blogpost/create/post', {
-    method: 'POST',
-    body: JSON.stringify({ title, body }),
-    headers: { 'Content-Type': 'application/json' },
-  });
-
-  if (response.ok) {
-
-   const newPost = await response.json();
-   const postContainer = document.querySelector("#post-container");
-   const postEl = document.createElement('div');
-   `<h3 class="post-title">${newPost.title}</h3>
-   <p class="post-body">${newPost.body}</p>
-   <p>By: ${newPost.name}</p>
-   <p>Created: ${newPost.posted}</p>`
-   postContainer.prepend(postEl);
-
-   /*  document.location.reload(); */
-  } else {
-    
-    alert('Failed to create a new post');
+      // Create and append the post elements
+      const postEl = document.createElement('div');
+      postEl.innerHTML = `
+        <h3 class="post-title">${post.title}</h3>
+        <p class="post-body">${post.body}</p>
+        <p>By: ${post.name}</p>
+        <p>Created: ${post.posted}</p>
+      `;
+      postContainer.appendChild(postEl);
+    } else {
+      alert('Failed to fetch the post');
+    }
+  } catch (error) {
+    console.error(error);
   }
 };
 
@@ -37,7 +32,7 @@ const deletePost = async (event) => {
   event.preventDefault();
   
    
-   const response = await fetch('/api/blogpost/:id', {
+   const response = await fetch('/:id', {
 
     method: 'DELETE',
   
@@ -45,7 +40,7 @@ const deletePost = async (event) => {
 
   if (response.ok) {
    
-    document.location.replace('/blogpost');
+    document.location.replace('/:id');
   } else {
     
     alert('Failed to delete');
@@ -53,6 +48,6 @@ const deletePost = async (event) => {
 };
 
 
-/* document.querySelector('.create-post-form').addEventListener('submit', Post);
- */
-document.querySelector('.posts').addEventListener('click', renderPost);
+ document.querySelector('#post-container').addEventListener('submit', fetchAndRenderPost);
+
+document.querySelector('.posts').addEventListener('submit', deletePost);
